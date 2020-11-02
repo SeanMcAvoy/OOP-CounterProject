@@ -4,21 +4,25 @@ package oop;
 // is used to count people passing through an entrance etc.
 // Each click will add one to the counter's count
 
-public class Counter {
+public class Counter
+{
     private int count;  // current count , initially 0
     private int limit;
 
     // Constructor
-    public Counter(int limit) {
+    public Counter(int limit)
+    {
         this.limit = limit; // 'this.' distinguishes field from parameter
         System.out.println("Counter constructor called, limit set to " + limit);
     }
 
-    public Counter() {   // no-argument (default) constructor
+    public Counter()
+    {   // no-argument (default) constructor
         limit = 10;
     }
 
-    public int getCount() {
+    public int getCount()
+    {
         return this.count;
     }
 
@@ -26,7 +30,8 @@ public class Counter {
      * click() increments the value of this counter by 1.
      */
     public void click() {
-        if (count <= limit) {
+        if (count < limit)
+        {
             count = count + 1;
         } else {
             System.out.println("Limit Reached");
@@ -38,6 +43,11 @@ public class Counter {
     // Implement reset() method to set the count to 0.
     // the value of this counter to 0.
     // Test by calling from App start()
+    public void reset()
+    {
+        this.count = 0;
+        System.out.println("Counter Reset count = "+ count);
+    }
 
 
     //TODO
@@ -45,10 +55,20 @@ public class Counter {
     // Do not allow the count to become negative.
     // Print the value of count from the method after the decrement.
     // Call this undo() method from App start().
+    public void undo()
+    {
+        if(this.count > 0)
+        {
+            this.count -= 1;
+            System.out.println("Undo Clicked! count = "+ this.count);
+        }
+        else {
+            System.out.println("The counter cant be a negative number");
+        }
 
-
-
-    public void display() {
-        System.out.println("Display count, count = " + count );
+    }
+    public void display()
+    {
+        System.out.println("Display count, count = " + this.count );
     }
 }
