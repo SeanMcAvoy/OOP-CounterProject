@@ -23,7 +23,7 @@ public class AppTest
         assertEquals(expected, actual);
     }
 
-    //TODO add a test for Counter undo()
+    //Done - add a test for Counter undo()
     @Test
     public void undoWontgoToNegative(){
         Counter counter = new Counter();
@@ -43,5 +43,9 @@ public class AppTest
         int actual = counter.getCount();
         assertEquals(expected, actual);
     }
+
+
+
+
 
 }
